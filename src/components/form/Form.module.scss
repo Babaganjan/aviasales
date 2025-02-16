@@ -1,0 +1,82 @@
+.form {
+  width: 232px;
+  height: 261px;
+  padding: 20px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.10);
+}
+
+.form_title {
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.label_block {
+  position: relative;
+  padding: 10px 0 10px 29px;
+  cursor: pointer;
+}
+
+.label_desc {
+  position: relative;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 153.846%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.label_desc::after {
+  content: "";
+  position: absolute;
+  width: 232px;
+  top: -10px;
+  bottom: -10px;
+  left: -50px;
+  right: 0;
+  background-color: #F1FCFF;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.label_desc:hover::after {
+  opacity: 1;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  }
+  
+.check_style {
+  position: absolute;
+  border: 1px solid #9ABBCE;
+  width: 20px;
+  height: 20px;
+  margin-left: -29px;
+  transition: border 0.3s ease-in-out;
+}
+  
+.checkbox:checked+.check_style {
+  border: 1px solid #2196F3;
+  background-image: url(../../assets/images/arrow-checked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  
+.checkbox:focus-visible+.check_style {
+  outline-offset: 2px;
+  outline: 1px solid #2196F3;
+}
