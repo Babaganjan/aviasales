@@ -16,21 +16,24 @@ const filteredAndSortedSelector = createSelector(
     // Фильтруем билеты
     const filteredTickets = tickets.filter((ticket) => {
       // Получаем массив количества пересадок для каждого сегмента
-      const stopsCounts = ticket.segments.map((segment) => segment.stops.length);
+      const stopsCounts = ticket.segments.map(
+        (segment) => segment.stops.length,
+      );
 
       // Проверяем условия для фильтрации
       const { checkboxes } = filterState; // Достаем состояние чекбоксов
 
       // Выполняем фильтрацию
-      const isFiltered = stopsCounts.some((stops) => (
-        (checkboxes[0] && stops >= 0) // Без пересадок
-        || (checkboxes[1] && stops === 0) // 1 пересадка
-        || (checkboxes[2] && stops === 1) // 2 пересадки
-        || (checkboxes[3] && stops === 2) // 3 пересадки
-        || (checkboxes[4] && stops > 3) // Более 3 пересадок
-      ));
+      const isFiltered = stopsCounts.some(
+        (stops) => (checkboxes[0] && stops >= 0)
+          || (checkboxes[1] && stops === 0)
+          || (checkboxes[2] && stops === 1)
+          || (checkboxes[3] && stops === 2)
+          || (checkboxes[4] && stops >= 3),
+      );
 
-      return isFiltered; // Возвращаем true, если хотя бы один сегмент соответствует условиям
+      // Возвращаем true, если хотя бы один сегмент соответствует условиям
+      return isFiltered;
     });
 
     // Сортируем отфильтрованные билеты
@@ -41,8 +44,14 @@ const filteredAndSortedSelector = createSelector(
       case 'fastest':
         // Сортировка по общей продолжительности
         return [...filteredTickets].sort((a, b) => {
-          const aDuration = a.segments.reduce((total, segment) => total + segment.duration, 0);
-          const bDuration = b.segments.reduce((total, segment) => total + segment.duration, 0);
+          const aDuration = a.segments.reduce(
+            (total, segment) => total + segment.duration,
+            0,
+          );
+          const bDuration = b.segments.reduce(
+            (total, segment) => total + segment.duration,
+            0,
+          );
           return aDuration - bDuration;
         });
       case 'optimal':

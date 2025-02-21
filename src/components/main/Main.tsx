@@ -23,14 +23,14 @@ const Main = () => {
   }, [dispatch]);
 
   return (
-  <main>
-        <div className={styles.main__container}>
-            <Form />
-            <div className={styles.main_right}>
-                <ToggleGroup />
-                <AviaList />
-            </div>
+    <main>
+      <div className={styles.main__container}>
+        <Form />
+        <div className={styles.main_right}>
+          <ToggleGroup />
+          <AviaList />
         </div>
+      </div>
     </main>
   );
 };

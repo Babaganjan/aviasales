@@ -1,35 +1,36 @@
- .btn_toggle {
-    background-color: #fff;
-    border: 1px solid  #DFE5EC;
-    padding: 15px;
-    color: #4A4A4A;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 166.667%;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: color .3s ease-in-out, background-color .3s ease-in-out;
-    &:first-child {
-        border-right: none;
-        border-radius: 5px 0 0 5px; 
-    }
-    &:last-child {
-        border-left: none;
-        border-radius: 0 5px 5px 0;
-    }
-    &:hover {
-        background-color: #2196F3;
-    }
+.btn_toggle {
+  background-color: #fff;
+  border: 1px solid #dfe5ec;
+  padding: 15px;
+  color: #4a4a4a;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 166.667%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  &:first-child {
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+  }
+  &:last-child {
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+  }
+  &:hover {
+    background-color: #2196f3;
+  }
 }
 
 .active {
-    background-color: #2196F3;
+  background-color: #2196f3;
+  color: #fff;
+  &:active {
+    background-color: #2196f3;
     color: #fff;
-    &:active {
-        background-color: #2196F3;
-        color: #fff;
-    }
+  }
 }
-

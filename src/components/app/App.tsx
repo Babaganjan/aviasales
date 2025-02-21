@@ -4,7 +4,6 @@ import Main from '../main/Main';
 
 const App: React.FC = () => (
   <>
-
     <HeaderComponent />
     <Main />
   </>

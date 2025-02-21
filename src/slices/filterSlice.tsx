@@ -32,8 +32,11 @@ const checkboxSlice = createSlice({
       }
 
       // Проверяем, установлены ли все остальные чекбоксы
-      const allChecked: boolean = state.checkboxes.slice(1).every((checkbox) => checkbox);
-      state.checkboxes[0] = allChecked; // Обновляем состояние чекбокса "Все"
+      const allChecked: boolean = state.checkboxes
+        .slice(1)
+        .every((checkbox) => checkbox);
+      // Обновляем состояние чекбокса "Все"
+      state.checkboxes[0] = allChecked;
     },
   },
 });

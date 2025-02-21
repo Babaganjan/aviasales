@@ -1,13 +1,18 @@
 // Form.tsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleAllCheckboxes, toggleIndividualCheckbox } from '../../slices/filterSlice';
+import {
+  toggleAllCheckboxes,
+  toggleIndividualCheckbox,
+} from '../../slices/filterSlice';
 import styles from './Form.module.scss';
 import { RootState } from '../../store/store';
 
 const Form: React.FC = () => {
   const dispatch = useDispatch();
-  const checkboxes = useSelector((state: RootState) => state.checkboxes.checkboxes);
+  const checkboxes = useSelector(
+    (state: RootState) => state.checkboxes.checkboxes,
+  );
 
   const handleToggleAll = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;

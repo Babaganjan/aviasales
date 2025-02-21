@@ -14,15 +14,19 @@ const ToggleGroup: React.FC = () => {
     { id: 'optimal', label: 'Оптимальный' },
   ];
   return (
-        <div>
-            {toggleButtons.map((button) => (
-                <button key={button.id}
-                className={`${styles.btn_toggle} ${sort === button.id ? styles.active : ''}`}
-                onClick={() => { dispatch(setActiveSort(button.id)); }}>
-                    {button.label}
-                </button>
-            ))}
-        </div>
+    <div>
+      {toggleButtons.map((button) => (
+        <button
+          key={button.id}
+          className={`${styles.btn_toggle} ${sort === button.id ? styles.active : ''}`}
+          onClick={() => {
+            dispatch(setActiveSort(button.id));
+          }}
+        >
+          {button.label}
+        </button>
+      ))}
+    </div>
   );
 };
 

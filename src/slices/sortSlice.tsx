@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface SortState {
-    activeSort: string
+  activeSort: string;
 }
 
 const initialState: SortState = {
@@ -12,7 +12,7 @@ const sortSlice = createSlice({
   name: 'sort',
   initialState,
   reducers: {
-    setActiveSort: (state, action:PayloadAction<string>): void => {
+    setActiveSort: (state, action: PayloadAction<string>): void => {
       state.activeSort = action.payload;
     },
   },
