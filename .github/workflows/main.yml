@@ -1,0 +1,8 @@
+name: main
+on: workflow_dispatch
+jobs:
+  print:
+    rus-on: windows-latest
+    steps: 
+      - name: Print to console
+        run: echo Hello GH actions
